@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wibu Style | Panel Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #f9f9f9;">
+
+    <header>
+        <div class="logo">ADMIN DASHBOARD</div>
+        <a href="index.html" class="btn-secondary" style="width: auto; text-decoration: none;">LIHAT KEDAI</a>
+    </header>
+
+    <div class="admin-container">
+        
+        <div id="login-section" class="admin-box reveal-up">
+            <h2>LOG MASUK ADMIN</h2>
+            <p style="margin-bottom: 15px; color: gray;">Kata laluan: admin123</p>
+            <input type="password" id="admin-password" placeholder="Masukkan Kata Laluan...">
+            <button class="btn-primary" onclick="checkLogin()">LOG MASUK</button>
+        </div>
+
+        <div id="dashboard-section" style="display: none;">
+            
+            <div class="admin-box reveal-up">
+                <h3>1. KEMAS KINI PROMOSI</h3>
+                <input type="text" id="admin-promo-input" placeholder="Ayat promosi baru...">
+                <button class="btn-primary" onclick="updatePromo()">SIMPAN AYAT PROMOSI</button>
+            </div>
+
+            <div class="admin-box reveal-up">
+                <h3>2. TUKAR GAMBAR DEPAN (HERO)</h3>
+                <input type="file" id="hero-image-file" accept="image/*" style="padding: 5px;">
+                <img id="hero-preview" src="" style="max-width: 100%; display: none; margin-bottom: 10px; border: 1px solid #ccc;">
+                <button class="btn-secondary" onclick="updateHeroImage()" style="width:100%;">SIMPAN GAMBAR DEPAN</button>
+            </div>
+
+            <div class="admin-box reveal-up">
+                <h3>3. TAMBAH KOLEKSI BAJU BARU</h3>
+                <input type="text" id="new-name" placeholder="Nama Baju (Cth: Wibu Oversized Tee)">
+                <input type="number" id="new-price" placeholder="Harga (RM)">
+                <input type="file" id="new-image-file" accept="image/*" style="padding: 5px;">
+                <img id="image-preview" src="" style="max-width: 100px; display: none; margin-bottom: 10px; border: 1px solid #ccc;">
+                <button class="btn-primary" onclick="addProduct()">TAMBAH BAJU</button>
+            </div>
+
+            <div class="admin-box" id="edit-section" style="display: none; border: 2px solid #000; box-shadow: 10px 10px 0px rgba(0,0,0,0.1);">
+                <h3 style="color: #000;">✏️ EDIT BAJU: <span id="edit-id-label"></span></h3>
+                <input type="hidden" id="edit-index">
+                <input type="text" id="edit-name" placeholder="Nama Baju Baru">
+                <input type="number" id="edit-price" placeholder="Harga Baru (RM)">
+                <input type="file" id="edit-image-file" accept="image/*" style="padding: 5px; margin-bottom: 10px;">
+                <img id="edit-image-preview" src="" style="max-width: 100px; display: block; margin-bottom: 15px; border: 1px solid #ccc;">
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-primary" onclick="saveEdit()">SIMPAN PERUBAHAN</button>
+                    <button class="btn-secondary" onclick="cancelEdit()">BATAL</button>
+                </div>
+            </div>
+
+            <div class="admin-box reveal-up">
+                <h3>4. PENGURUSAN BAJU SEDIA ADA</h3>
+                <ul id="admin-product-list" style="list-style: none; padding: 0; margin-top: 15px;"></ul>
+            </div>
+
+            <button class="btn-danger reveal-up" style="margin-top: 20px;" onclick="resetData()">PADAM SEMUA DATA & KEMBALI ASAL</button>
+
+        </div>
+    </div>
+
+    <!-- Tapak Toast Notification -->
+    <div id="toast-box"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

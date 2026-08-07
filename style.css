@@ -1,0 +1,226 @@
+/* =======================================================
+   FONTS: NUNITO (Gaya Anime/Kawaii) + INTER (Shopee Clean)
+======================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Inter:wght@400;500;700&display=swap');
+
+/* =======================================================
+   TETAPAN ASAS & WARNA (Shopee Vibe)
+======================================================= */
+:root {
+    --shopee-orange: #ee4d2d;
+    --shopee-hover: #f05d40;
+    --bg-gray: #f5f5f5;
+    --card-white: #ffffff;
+    --text-dark: #222222;
+    --anime-pink: #ff6b81; /* Sentuhan Anime */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-gray); /* Latar kelabu cerah ala Shopee */
+    color: var(--text-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'Nunito', sans-serif; text-transform: uppercase; }
+
+/* Scrollbar comel */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #e0e0e0; }
+::-webkit-scrollbar-thumb { background: var(--shopee-orange); border-radius: 10px; }
+
+/* =======================================================
+   ANIMASI SKROL "BIKE BEAR" (KEKAL ULTRA-SMOOTH)
+======================================================= */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =======================================================
+   HEADER (Shopee White Style)
+======================================================= */
+header {
+    display: flex; justify-content: space-between; align-items: center;
+    background-color: var(--card-white); padding: 15px 5%; position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.logo { 
+    font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 900; 
+    color: var(--shopee-orange); cursor: pointer; transition: 0.3s; 
+    text-shadow: 2px 2px 0px rgba(238, 77, 45, 0.2); /* Anime Text Effect */
+}
+.logo:hover { transform: scale(1.05) rotate(-2deg); }
+
+.nav-links { display: flex; gap: 30px; font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 800; }
+.nav-links a { text-decoration: none; color: #555; transition: 0.3s ease; }
+.nav-links a:hover { color: var(--shopee-orange); }
+.nav-links a.active { color: var(--shopee-orange); border-bottom: 3px solid var(--shopee-orange); padding-bottom: 5px; }
+
+.btn-icon { 
+    background: #fff8f6; color: var(--shopee-orange); font-size: 14px; border: 1px solid var(--shopee-orange);
+    padding: 8px 15px; border-radius: 20px; font-weight: 800; cursor: pointer; font-family: 'Nunito', sans-serif; transition: 0.3s; 
+}
+.btn-icon:hover { background: var(--shopee-orange); color: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(238, 77, 45, 0.3); }
+
+/* =======================================================
+   HERO BANNER (Anime x Marketplace Vibe)
+======================================================= */
+.hero {
+    height: 70vh; background-size: cover !important; background-position: center top !important; 
+    display: flex; align-items: center; justify-content: flex-start; position: relative; margin-bottom: 20px;
+}
+.hero::after { 
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    background: linear-gradient(to right, rgba(238,77,45,0.9) 0%, rgba(255,107,129,0.5) 50%, transparent 100%); 
+}
+
+.hero-content { position: relative; z-index: 1; color: #ffffff; padding: 0 5%; max-width: 600px; }
+.hero-content h1 { font-size: 4.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 10px; text-shadow: 3px 3px 0px rgba(0,0,0,0.2); }
+.hero-content p { font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; background: rgba(0,0,0,0.3); padding: 5px 15px; display: inline-block; border-radius: 20px; }
+
+/* =======================================================
+   BUTANG (Bouncy Gamified)
+======================================================= */
+.btn-primary { 
+    background: var(--shopee-orange); color: #ffffff; border: none; border-radius: 4px;
+    padding: 12px 20px; font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 700; 
+    cursor: pointer; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy effect */
+    width: 100%; box-shadow: 0 4px 6px rgba(238,77,45,0.2);
+}
+.btn-primary:hover { background: var(--shopee-hover); transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 15px rgba(238,77,45,0.4); }
+
+.hero-content .btn-primary { background: #fff; color: var(--shopee-orange); width: auto; font-size: 16px; padding: 15px 35px; border-radius: 30px; font-family: 'Nunito', sans-serif; font-weight: 900; }
+.hero-content .btn-primary:hover { background: #ffeae6; }
+
+.btn-secondary { background: #fff; color: var(--text-dark); border: 1px solid #ccc; padding: 12px 20px; border-radius: 4px; cursor: pointer; transition: 0.3s; font-weight: bold; width: 100%; }
+.btn-secondary:hover { background: #f9f9f9; border-color: var(--shopee-orange); color: var(--shopee-orange); }
+.btn-danger { background: #fff; color: #ff3333; border: 1px solid #ff3333; border-radius: 4px; padding: 10px 15px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+.btn-danger:hover { background: #ff3333; color: #fff; }
+
+/* =======================================================
+   KEDAI (Gaya Kad Shopee Penuh Diskaun)
+======================================================= */
+.products { padding: 40px 5%; max-width: 1300px; margin: auto; }
+.products h2 { font-size: 2rem; font-weight: 900; margin-bottom: 30px; text-align: left; color: var(--shopee-orange); border-bottom: 2px solid var(--shopee-orange); padding-bottom: 10px; display: inline-block; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+
+.product-card { 
+    background: var(--card-white); text-align: left; position: relative; 
+    border-radius: 4px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: 0.3s;
+    display: flex; flex-direction: column;
+}
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); border: 1px solid var(--shopee-orange); }
+
+.img-container { position: relative; overflow: hidden; background: #fff; padding-top: 100%; /* Petak sama sisi 1:1 macam Shopee */ }
+.img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; }
+.product-card:hover img { transform: scale(1.03); }
+
+/* Detail Baju Shopee Style */
+.card-details { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
+.card-details h3 { 
+    font-size: 14px; font-weight: 500; color: #222; font-family: 'Inter', sans-serif; text-transform: none;
+    line-height: 1.3; height: 36px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; margin-bottom: 8px;
+}
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.price-row p { color: var(--shopee-orange); font-weight: 700; font-size: 1.2rem; }
+.price-row span { font-size: 11px; color: #757575; }
+.rating-row { display: flex; align-items: center; font-size: 10px; color: #ffce3d; margin-bottom: 12px; }
+
+/* Select Saiz Cute */
+.product-card select { 
+    width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #e0e0e0; border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 13px; outline: none; background: #fdfdfd; cursor: pointer; transition: 0.3s; margin-top: auto;
+}
+.product-card select:focus { border-color: var(--shopee-orange); }
+
+/* =======================================================
+   BADGES (Lencana Shopee & Anime)
+======================================================= */
+.badge-mall { background: #d0011b; color: #fff; font-size: 10px; font-weight: bold; padding: 2px 4px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+.badge-discount { position: absolute; top: 0; right: 0; background: #ffd12a; color: var(--shopee-orange); font-size: 12px; font-weight: 900; padding: 4px 8px; z-index: 10; font-family: 'Nunito'; }
+.badge-shocking { position: absolute; top: 0; left: 0; background: var(--shopee-orange); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 8px; border-bottom-right-radius: 10px; z-index: 10; font-family: 'Nunito'; letter-spacing: 1px;}
+
+/* =======================================================
+   LOOKBOOK & FAQ (Kawaii UI)
+======================================================= */
+.lookbook-header { text-align: center; padding: 60px 5% 20px; }
+.lookbook-header h1 { font-size: 3rem; font-weight: 900; color: var(--shopee-orange); }
+.lookbook-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 0 5% 60px; max-width: 1000px; margin: auto; }
+.lookbook-item { overflow: hidden; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+.lookbook-item img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1/1; transition: 0.5s ease; }
+.lookbook-item:hover img { transform: scale(1.05); }
+
+.faq-container { max-width: 800px; margin: 60px auto; padding: 0 5%; min-height: 60vh; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.faq-item { border-bottom: 1px dashed #ddd; padding: 20px 0; }
+.faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 800; color: var(--shopee-orange); }
+.faq-item p { color: #555; font-size: 14px; line-height: 1.6; }
+
+/* =======================================================
+   TROLI LACI
+======================================================= */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 2000; }
+.modal-content { background-color: #ffffff; margin: 0; padding: 30px; width: 100%; max-width: 400px; height: 100vh; position: absolute; right: 0; top: 0; animation: slideInRight 0.4s ease; display: flex; flex-direction: column; }
+@keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+.close { position: absolute; top: 20px; right: 25px; font-size: 35px; cursor: pointer; color: #888; transition: 0.3s; line-height: 1; }
+.close:hover { color: var(--shopee-orange); }
+#cart-items { list-style: none; margin: 30px 0 20px; flex-grow: 1; overflow-y: auto; }
+#cart-items li { border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 15px; font-size: 14px; }
+
+/* =======================================================
+   TOAST NOTIFICATION (Gaya Success Shopee)
+======================================================= */
+#toast-box { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; z-index: 9999; pointer-events: none; }
+.toast { width: auto; min-width: 280px; background: rgba(0, 0, 0, 0.8); color: #ffffff; font-weight: 500; font-size: 14px; padding: 15px 25px; margin-top: 10px; border-radius: 30px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px; animation: toastPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards, toastFadeOut 0.4s ease 2.5s forwards; }
+@keyframes toastPop { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes toastFadeOut { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(0.8); opacity: 0; } }
+
+/* =======================================================
+   FOOTER
+======================================================= */
+footer { background-color: #fff; color: #333; padding: 60px 5% 20px; border-top: 2px solid var(--shopee-orange); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; margin-bottom: 40px; }
+.footer-col h4 { font-size: 14px; font-weight: 800; margin-bottom: 15px; color: #222; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: #757575; text-decoration: none; font-size: 13px; transition: 0.3s; }
+.footer-col ul li a:hover { color: var(--shopee-orange); }
+.footer-bottom { text-align: center; border-top: 1px solid #eee; padding-top: 20px; font-size: 12px; color: #aaa; }
+
+/* =======================================================
+   ADMIN PANEL
+======================================================= */
+.admin-container { max-width: 600px; margin: 50px auto; padding: 20px; }
+.admin-box { background: #ffffff; padding: 30px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
+.admin-box h3 { font-size: 1rem; border-bottom: 1px dashed #ddd; padding-bottom: 10px; color: var(--shopee-orange); margin-bottom: 15px; }
+.admin-box input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; outline: none; font-family: 'Inter', sans-serif; font-size: 14px; }
+.admin-box input:focus { border-color: var(--shopee-orange); }
+
+/* =======================================================
+   RESPONSIVE MOBILE
+======================================================= */
+@media (max-width: 768px) {
+    header { padding: 12px 5%; }
+    .logo { font-size: 20px; }
+    .nav-links { display: none; /* Sembunyi nav kat mobile supaya tak semak */ }
+    .hero { height: 50vh; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .products { padding: 20px 3%; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* 2 Kolum kat fon macam Shopee! */
+    .card-details h3 { font-size: 12px; height: 30px; }
+    .price-row p { font-size: 1rem; }
+    .badge-discount { font-size: 10px; padding: 2px 5px; }
+    .lookbook-grid { grid-template-columns: 1fr; }
+}

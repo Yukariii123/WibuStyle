@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wibu Style | Official Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">WIBU STYLE</div>
+        <nav class="nav-links">
+            <a href="index.html" class="active" style="color: black; border-bottom: 2px solid black;">KEDAI</a>
+            <a href="lookbook.html">LOOKBOOK</a>
+            <a href="about.html">TENTANG KAMI</a>
+            <a href="faq.html">BANTUAN</a>
+        </nav>
+        <div class="nav-actions">
+            <button onclick="toggleCart()" class="btn-icon">CART (<span id="cart-count">0</span>)</button>
+        </div>
+    </header>
+
+    <section class="hero" id="hero-section">
+        <div class="hero-content">
+            <h1 class="reveal-up">KOLEKSI<br>TERBARU</h1>
+            <p id="promo-text" class="reveal-up">Diskaun 20% untuk semua koleksi jalanan.</p>
+            <div class="reveal-up">
+                <a href="#shop" class="btn-primary" style="text-decoration:none;">BELI SEKARANG</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="products">
+        <h2 class="reveal-up">NEW ARRIVALS</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Baju dijana di sini oleh JavaScript -->
+        </div>
+    </section>
+
+    <!-- Modal Troli Laci -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2 style="font-family:'Syne'; font-weight:800;">YOUR CART</h2>
+            <ul id="cart-items"></ul>
+            <div style="border-top: 2px solid #000; padding-top: 20px; margin-bottom: 20px;">
+                <h3 style="display:flex; justify-content:space-between; font-size:1.5rem; font-weight:800;">
+                    <span>TOTAL:</span> <span>RM <span id="cart-total">0.00</span></span>
+                </h3>
+            </div>
+            <button class="btn-primary" onclick="checkoutWhatsApp()">CHECKOUT VIA WHATSAPP</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col reveal-up">
+                <h4>WIBU STYLE</h4>
+                <p style="color:#555; font-size:14px; line-height:1.6;">Estetika jalanan premium gabungan budaya pop Jepun. Direka untuk mereka yang berani melangkah ke dunia baharu.</p>
+            </div>
+            <div class="footer-col reveal-up">
+                <h4>PAUTAN PANTAS</h4>
+                <ul>
+                    <li><a href="index.html">Beli Belah</a></li>
+                    <li><a href="lookbook.html">Lookbook</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col reveal-up">
+                <h4>BANTUAN PELANGGAN</h4>
+                <ul>
+                    <li><a href="faq.html">Penghantaran & Pulangan</a></li>
+                    <li><a href="faq.html">Panduan Saiz</a></li>
+                    <li><a href="faq.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 WIBU STYLE OFFICIAL. ALL RIGHTS RESERVED. | <a href="admin.html" style="color:#000; text-decoration:none; font-weight:bold;">ADMIN</a>
+        </div>
+    </footer>
+
+    <!-- Tapak Toast Notification -->
+    <div id="toast-box"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
